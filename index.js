@@ -8,7 +8,7 @@ const mock = { cacheable() {} };
 
 function register(options) {
   return pirates.addHook(hook, { 
-    exts: ['.graphql', '.graphqls', '.graphql.ts', '.graphqls.ts'], 
+    exts: ['.graphql', '.graphqls'], 
     matcher: matcher,
     ignoreNodeModules: !(options && options.ignoreNodeModules === false)
   });
@@ -18,6 +18,6 @@ function register(options) {
   }
 
   function matcher(filename) {
-    return /\.graphqls?(?:\.ts)?$/.test(filename);
+    return /\.graphqls?$/.test(filename);
   }
 }
