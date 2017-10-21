@@ -1,0 +1,22 @@
+{
+  "name": "graphql-tag-register",
+  "version": "1.0.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "pirates": "^3.0.1"
+  },
+  "peerDependencies": {
+    "graphql": "^0.9.0 || ^0.10.0 || ^0.11.0",
+    "graphql-tag": "^2.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
