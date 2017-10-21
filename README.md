@@ -2,7 +2,7 @@
 
 Require `.graphql` files with Node & Typescript.
 
-You may want to add `"ignore": [".graphql", ".graphqls"]` to your .babelrc if you use babel@6. I hear that 
+You may want to add `"ignore": [".graphql", ".graphqls"]` to your .babelrc if you use babel@6. I hear that babel@7 fixes this by using the same dependency this module does ;)
 
 *Supports node@>=6*
 
