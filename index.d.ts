@@ -1,5 +1,5 @@
 export interface RegisterOptions {
-  ignoreNodeModules: boolean = true;
+  ignoreNodeModules: boolean
 }
 
 declare function register(options?: RegisterOptions): void

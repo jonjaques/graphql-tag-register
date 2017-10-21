@@ -11,7 +11,7 @@ You may want to add `"ignore": [".graphql", ".graphqls"]` to your .babelrc if yo
 ### Install
 
 ```
-npm i --save graphql graphql-tag graphql-tag-loader-register
+npm i --save graphql graphql-tag graphql-tag-loader-register [@types/graphql]
 ```
 
 ### Code
@@ -24,7 +24,7 @@ const schema = require('./schema.graphqls')
 console.log(schema) // schema document ast
 
 const query = require('./query.graphql')
-console.log(query) // schema document ast
+console.log(query) // query document ast
 ```
 
 Also supports ES6 imports and TypeScript with a default export.
@@ -34,20 +34,20 @@ import register from 'graphql-tag-register'
 register()
 ```
 
-If using TypeScript, you'll want to add these declarations to your types file.
+If using TypeScript, slightly more work is required. My only use case right now involves ts-node, and to get that to work I did the following:
 
 ```ts
-declare module '*.graphql' {
-  import {DocumentNode} from 'graphql';
-  const value: DocumentNode;
-  export = value;
-}
+// entry.js
+process.env.TS_NODE_IGNORE = '\.graphqls?$'
+require('ts-node/register')
 
-declare module '*.graphqls' {
-  import {DocumentNode} from 'graphql';
-  const value: DocumentNode;
-  export = value;
-}
+// graphql.ts
+import register from 'graphql-tag-loader-register'
+register()
+
+import {DocumentNode} from 'graphql'
+const schema = require('schema.graphqls') as DocumentNode
+const query = require('schema.graphql') as DocumentNode
 ```
 
-> If somebody can improve the module by figuring out how to declare this globally or more succinctly, please do!
+> If somebody can improve the module by contributing working configs or figuring out how to declare this globally or more succinctly, please do!
