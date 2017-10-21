@@ -1,4 +1,4 @@
-# graphql-tag-register
+# graphql-tag-loader-register
 
 Require `.graphql` files with Node & Typescript.
 
@@ -10,7 +10,7 @@ You may want to add `"ignore": [".graphql", ".graphqls"]` to your .babelrc if yo
 
 index.js
 ```js
-const register = require('graphql-tag-register')
+const register = require('graphql-tag-loader-register')
 register()
 
 const schema = require('./schema.graphqls')

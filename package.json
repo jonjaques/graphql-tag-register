@@ -1,5 +1,5 @@
 {
-  "name": "graphql-tag-register",
+  "name": "graphql-tag-loader-register",
   "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
